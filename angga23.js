@@ -268,7 +268,7 @@ module.exports = angga23 = async (angga23, message) => {
         const isCmd = command.startsWith(`${prefix}`)
 		
         const isAdmin = adminNumber.includes(sender.id)
-        const ownerNumber = '6281338888294@c.us'
+        const ownerNumber = '6281555745357@c.us'
         const isOwner = ownerNumber.includes(sender.id)
 		const isBad = bad.includes(sender.id)
 		const isVipUser = VipUser.includes(sender.id)
@@ -415,7 +415,7 @@ module.exports = angga23 = async (angga23, message) => {
 												
                 if(body === `${prefix}mute` && isMuted(chatId) == true){
                     if(isGroupMsg) {
-                        if (!isAdmin) return angga23.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh admin Sasha!', id)
+                        if (!isAdmin) return angga23.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh admin wiko!', id)
                         if(isMsgLimit(serial)){
                             return
                         }else{
@@ -437,7 +437,7 @@ module.exports = angga23 = async (angga23, message) => {
                 }
                 if(body === `${prefix}unmute` && isMuted(chatId) == false){
                     if(isGroupMsg) {
-                        if (!isAdmin) return angga23.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh admin Sasha!', id)
+                        if (!isAdmin) return angga23.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh admin wiko!', id)
                         if(isMsgLimit(serial)){
                             return
                         }else{
@@ -460,13 +460,13 @@ module.exports = angga23 = async (angga23, message) => {
                     }
                 }
 				
-				if (chats.match("sasha") || chats.match("Sasha") || chats.match("SASHA")) {
+				if (chats.match("wiko") || chats.match("wiko") || chats.match("wiko")) {
 					const bls = balas[Math.floor(Math.random() * (balas.length))]
 					await angga23.reply(from, `*${bls}* \n\n`, id)
 				}
 
                 if (body === `${prefix}unbanchat`) {
-                    if (!isOwner) return angga23.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh Owner Sasha!', id)
+                    if (!isOwner) return angga23.reply(from, 'Maaf, perintah ini hanya dapat dilakukan oleh Owner wiko!', id)
                     if(setting.banChats === false) return
                     setting.banChats = false
                     banChats = false
@@ -481,19 +481,19 @@ module.exports = angga23 = async (angga23, message) => {
 
         case `${prefix}banchat`:
             if (setting.banChats === true) return
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
             setting.banChats = true
             banChats = true
             fs.writeFileSync('./lib/database/setting.json', JSON.stringify(setting, null, 2))
             angga23.reply('Global chat has been enable!')
             break
 		case `prefix`:
-			angga23.reply(from, `*Sasha is Use ( ${prefix} ) Prefix!.* 
+			angga23.reply(from, `*wiko is Use ( ${prefix} ) Prefix!.* 
 _Prefix adalah tanda di awal perintah._
 _Contoh: ${prefix}menu_`, id)
 			break
 		case `${prefix}setto`:
-			if (!isOwner && !isAdmin) return angga23.reply(from, 'Maaf, Fitur ini hanya untuk OWNER dan ADMIN Sasha!', id)
+			if (!isOwner && !isAdmin) return angga23.reply(from, 'Maaf, Fitur ini hanya untuk OWNER dan ADMIN wiko!', id)
 			if (args.length === 1) return angga23.reply(from, `*Kirim Perintah ${prefix}setto [prefix baru]*. 
 Contoh: ${prefix}setto #`, id)
 			const pf = body.slice(7)  
@@ -521,7 +521,7 @@ Contoh: ${prefix}setto #`, id)
             break
 		case `${prefix}bukagc`:
 		case `${prefix}open`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh AdminSasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Adminwiko!', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
             angga23.setGroupToAdminsOnly(groupId, false)
             break
@@ -767,13 +767,13 @@ ${desc}`)
             if (!bsk) angga23.reply(from, `⚠️ Format salah! Ketik *${prefix}menu* untuk penggunaan.`)
             await angga23.sendText(from, `Pertanyaan: *${bsk}* \n\nJawaban: ${jbsk}`)
             break
-		/*case 'sasha':
+		/*case 'wiko':
 			const bls = balas[Math.floor(Math.random() * (balas.length))]
 			await angga23.reply(from, `*${bls}* \n\n`, id)
 			break*/
         case `${prefix}owner`:
         case `${prefix}creator`:
-            angga23.sendContact(chatId, `6281338888294@c.us`)
+            angga23.sendContact(chatId, `6281555745357@c.us`)
             angga23.reply(from, 'Itu nomor Pacar ku, eh maksudnya Owner ku', id)
             break
         // ON OFF
@@ -795,7 +795,7 @@ ${desc}`)
             break
         case `${prefix}simi`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin Sasha!', id) // Hanya Admin yang bisa mengaktifkan
+            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin wiko!', id) // Hanya Admin yang bisa mengaktifkan
             if (args.length === 1) return angga23.reply(from, 'Pilih enable atau disable!', id)
             if (args[1].toLowerCase() === 'enable') {
                 simi_.push(chat.id)
@@ -938,7 +938,7 @@ ${desc}`)
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik @limit Untuk Mengecek Kuota Limit Kamu`, id)
             
             await limitAdd(serial)
-            if (args.length === 1) return angga23.reply(from, 'Kirim perintah *@pinterest [query]*\nContoh : *@pinterest Sasha*', id)
+            if (args.length === 1) return angga23.reply(from, 'Kirim perintah *@pinterest [query]*\nContoh : *@pinterest wiko*', id)
             const ptrsq = body.slice(11)
             const ptrs = await axios.get('https://api.fdci.se/rep.php?gambar='+ptrsq)
             const b = JSON.parse(JSON.stringify(ptrs.data))
@@ -1266,7 +1266,7 @@ ${desc}`)
             break
         case `${prefix}quran`:
             if (!isGroupMsg) return angga23.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
-            if (!isVipUser) return angga23.reply(from, 'Fitur ini hanya dapat digunakan oleh User Vip Sasha!', id)
+            if (!isVipUser) return angga23.reply(from, 'Fitur ini hanya dapat digunakan oleh User Vip wiko!', id)
 			if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik @limit Untuk Mengecek Kuota Limit Kamu`, id)
             if (args.length === 1) return angga23.reply(from, `Kirim perintah Surah Quran kamu dengan cara ketik perintah :\n*@quran* [ Urutan Surat ]\nContoh :\n*@quran 1*`, id)
             const qura = `https://api.vhtear.com/quran?no=${args[1]}&apikey=${vhtearkey}`
@@ -1278,7 +1278,7 @@ ${desc}`)
             break
         case `${prefix}listsurah`:
             if (!isGroupMsg) return angga23.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
-            if (!isVipUser) return angga23.reply(from, 'Fitur ini hanya dapat digunakan oleh User Vip Sasha!', id)
+            if (!isVipUser) return angga23.reply(from, 'Fitur ini hanya dapat digunakan oleh User Vip wiko!', id)
 			try {
                 axios.get('https://raw.githubusercontent.com/ArugaZ/scraper-results/main/islam/surah.json')
                 .then((response) => {
@@ -1297,7 +1297,7 @@ ${desc}`)
             break
         case `${prefix}infosurah`:
             if (!isGroupMsg) return angga23.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
-            if (!isVipUser) return angga23.reply(from, 'Fitur ini hanya dapat digunakan oleh User Vip Sasha!', id)
+            if (!isVipUser) return angga23.reply(from, 'Fitur ini hanya dapat digunakan oleh User Vip wiko!', id)
 			if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik @limit Untuk Mengecek Kuota Limit Kamu`, id)
             if (args.length == 1) return angga23.reply(from, `Kirim perintah *@infosurah [ Nama Surah ]*\nContoh : *@infosurah al-fatihah*`, message.id)
                 var responseh = await axios.get('https://raw.githubusercontent.com/ArugaZ/scraper-results/main/islam/surah.json')
@@ -1449,7 +1449,7 @@ ${desc}`)
             break
         case `${prefix}play`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
-			if (!isVipUser) return angga23.reply(from, 'Fitur ini hanya dapat digunakan oleh User Vip Sasha!', id)
+			if (!isVipUser) return angga23.reply(from, 'Fitur ini hanya dapat digunakan oleh User Vip wiko!', id)
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik @ceklimit Untuk Mengecek Kuota Limit Kamu`, id)
             if (args.length == 1) return angga23.reply(from, `Untuk mencari lagu dari youtube\n\nPenggunaan: @play judul lagu`, id)
             try {
@@ -1539,52 +1539,41 @@ ${desc}`)
             break
         case `${prefix}nhentai`: // SEARCH NHENTAI
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
+            angga23.reply(from, 'P, HUBUNGI : wa.me/6281555745357', id)
           break
         case `${prefix}getnhentai`: // DOWNLOADER NHENTAI PDF FROM #NHENTAI
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
           break
         case `{prefix}xvideos`: // SEARCH VIDEO FROM YOUTUBE
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}getxvideos`: // DOWNLOADER VIDEO FROM #VIDEO
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}video`: // SEARCH VIDEO FROM YOUTUBE
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}getvideo`: // DOWNLOADER VIDEO FROM #VIDEO
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}music`: // SEARCH MUSIC FROM YOUTUBE
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}getmusic`: // DOWNLOADER MUSIC FROM #MUSIC
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}youtubesearch`: // SEARCH YOUTUBE
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}shopee`: // SEARCH SHOPEE PRODUCT
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}playstore`: // SEARCH PLAYSTORE
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
             break
         case `${prefix}animesearch`: // SEARCH ANIME
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            angga23.reply(from, 'PREMIUM COMMAND, HUBUNGI : wa.me/6281338888294', id)
-			break
+		      	break
 		case `${prefix}xnxx`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
             if (!isNsfw) return angga23.reply(from, 'command/Perintah NSFW belum di aktifkan di group ini!', id)
@@ -1616,7 +1605,7 @@ ${desc}`)
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik @limit Untuk Mengecek Kuota Limit Kamu`, id)
             
             await limitAdd(serial)
-            if (args.length === 1) return angga23.reply(from, 'Kirim perintah *@ramalpasangan [kamu|pasangan]*\nContoh : *@ramalpasangan angga23|Sasha*', id)
+            if (args.length === 1) return angga23.reply(from, 'Kirim perintah *@ramalpasangan [kamu|pasangan]*\nContoh : *@ramalpasangan angga23|wiko*', id)
             arg = body.trim().split('|')
             if (arg.length >= 2) {
             angga23.reply(from, mess.wait, id)
@@ -1732,7 +1721,7 @@ Menunggu video...`
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik @limit Untuk Mengecek Kuota Limit Kamu`, id)
             
             await limitAdd(serial)
-            if (args.length === 1) return angga23.reply(from, 'Kirim perintah *@googleimage [query]*\nContoh : *@googleimage Sasha*', id)
+            if (args.length === 1) return angga23.reply(from, 'Kirim perintah *@googleimage [query]*\nContoh : *@googleimage wiko*', id)
             try{
                 angga23.reply(from, mess.wait, id)
                 const gimgg = body.slice(13)
@@ -1781,7 +1770,7 @@ Menunggu video...`
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik @limit Untuk Mengecek Kuota Limit Kamu`, id)
             
             await limitAdd(serial)
-            if (args.length === 1)  return angga23.reply(from, 'Kirim perintah *@sandwriting [ Teks ]*\nContoh *@sandwriting Sasha Cantik*', id)
+            if (args.length === 1)  return angga23.reply(from, 'Kirim perintah *@sandwriting [ Teks ]*\nContoh *@sandwriting wiko Cantik*', id)
             const swrt = body.slice(13)
             try {
             const swrt2 = await axios.get('https://api.vhtear.com/sand_writing?text1=' + swrt + '&apikey=' + vhtearkey)
@@ -2441,7 +2430,7 @@ Menunggu video...`
             break
         // ADMIN & OWNER
         case `${prefix}bc`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko!', id)
             if (quotedMsg && quotedMsg.type == 'image') {
             const mediaData = await decryptMedia(quotedMsg, uaOverride)
             const imageBase64 = `data:${quotedMsg.mimetype};base64,${mediaData.toString('base64')}`
@@ -2450,7 +2439,7 @@ Menunggu video...`
             for (let ids of chatz) {
                 var cvk = await angga23.getChatById(ids)
                 if (!cvk.isReadOnly) 
-                await angga23.sendFile(ids, `${imageBase64}`,'bc.jpg', `[ *Sasha BroadCast* ]\n\n${msg}`)
+                await angga23.sendFile(ids, `${imageBase64}`,'bc.jpg', `[ *wiko BroadCast* ]\n\n${msg}`)
             }
             } else {
             let msg = body.slice(4)
@@ -2458,7 +2447,7 @@ Menunggu video...`
             for (let ids of chatz) {
                 var cvk = await angga23.getChatById(ids)
                 if (!cvk.isReadOnly) 
-                await angga23.sendText(ids, `[ *Sasha BroadCast* ]\n\n${msg}`)
+                await angga23.sendText(ids, `[ *wiko BroadCast* ]\n\n${msg}`)
             }
         }
             angga23.reply(from, 'Broadcast Success!', id)
@@ -2477,18 +2466,18 @@ Menunggu video...`
             const Owner_ = chat.groupMetadata.owner
             await angga23.sendTextWithMentions(from, `Owner Group : @${Owner_}`)
             break
-        case `${prefix}otagall`: // FOR OWNER & ADMIN Sasha
+        case `${prefix}otagall`: // FOR OWNER & ADMIN wiko
         case `${prefix}omentionall`:
 		case `${prefix}p`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha', id)
+            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko', id)
             const groupMek = await angga23.getGroupMembers(groupId)
             let heho = '╔══✪〘 Mention All 〙✪══\n'
             for (let i = 0; i < groupMek.length; i++) {
                 heho += '╠➥'
                 heho += ` @${groupMek[i].id.replace(/@c.us/g, '')}\n`
             }
-            heho += '╚═〘 Sasha BOT 〙'
+            heho += '╚═〘 wiko BOT 〙'
             await sleep(2000)
             await angga23.sendTextWithMentions(from, heho)
             break
@@ -2502,13 +2491,13 @@ Menunggu video...`
                 hehe += '╠➥'
                 hehe += ` @${groupMem[i].id.replace(/@c.us/g, '')}\n`
             }
-            hehe += '╚═〘 Sasha BOT 〙'
+            hehe += '╚═〘 wiko BOT 〙'
             await sleep(2000)
             await angga23.sendTextWithMentions(from, hehe)
             break
         case `${prefix}skickall`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
             const allMem = await angga23.getGroupMembers(groupId)
             for (let i = 0; i < allMem.length; i++) {
@@ -2522,7 +2511,7 @@ Menunggu video...`
             break
         case `${prefix}okickall`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group!', id)
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Admin Sasha', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Admin wiko', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
             const allMeq = await angga23.getGroupMembers(groupId)
             for (let i = 0; i < allMeq.length; i++) {
@@ -2550,7 +2539,7 @@ Menunggu video...`
             angga23.reply(from, 'Success kick all member', id)
             break
         case `${prefix}leaveall`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko', id)
             const allChats = await angga23.getAllChatIds()
             const allGroups = await angga23.getAllGroups()
             for (let gclist of allGroups) {
@@ -2560,7 +2549,7 @@ Menunggu video...`
             angga23.reply(from, 'Succes leave all group!', id)
             break
         case `${prefix}clearall`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko', id)
             const allChatz = await angga23.getAllChats()
             for (let dchat of allChatz) {
                 await angga23.deleteChat(dchat.id)
@@ -2571,7 +2560,7 @@ Menunggu video...`
             const orang = args[1]
             if (!isGroupMsg) return angga23.reply(from, 'Fitur ini hanya bisa di gunakan dalam group', id)
             if (args.length === 1) return angga23.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *@add* 628xxxxx', id)
-            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin Sasha', id)
+            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin wiko', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
             try {
                 await angga23.addParticipant(from,`${orang}@c.us`)
@@ -2593,7 +2582,7 @@ Menunggu video...`
             break
         case `${prefix}okick`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
             if (mentionedJidList.length === 0) return angga23.reply(from, 'Untuk menggunakan Perintah ini, kirim perintah *@okick* @tagmember', id)
             await angga23.sendText(from, `Perintah Owner diterima, mengeluarkan:\n${mentionedJidList.join('\n')}`)
@@ -2615,17 +2604,17 @@ Menunggu video...`
             break
         case `${prefix}oleave`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
-            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin Sasha', id)
-            await angga23.sendText(from,'SASHA DIPERINTAHKAN KELUAR OLEH OWNER!!').then(() => angga23.leaveGroup(groupId))
+            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin wiko', id)
+            await angga23.sendText(from,'wiko DIPERINTAHKAN KELUAR OLEH OWNER!!').then(() => angga23.leaveGroup(groupId))
             break
         case `${prefix}leave`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
-            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin Sasha', id)
+            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin wiko', id)
             await angga23.sendText(from,'Sayonara').then(() => angga23.leaveGroup(groupId))
             break
         case `${prefix}opromote`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
-            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin Sasha', id)
+            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin wiko', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Fitur ini hanya bisa di gunakan ketika bot menjadi admin', id)
             if (mentionedJidList.length === 0) return angga23.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *@promote* @tagmember', id)
             if (mentionedJidList.length >= 2) return angga23.reply(from, 'Maaf, perintah ini hanya dapat digunakan kepada 1 user.', id)
@@ -2645,7 +2634,7 @@ Menunggu video...`
             break
         case `${prefix}odemote`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
-            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin Sasha', id)
+            if (!isOwner, !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin wiko', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Fitur ini hanya bisa di gunakan ketika bot menjadi admin', id)
             if (mentionedJidList.length === 0) return angga23.reply(from, 'Untuk menggunakan fitur ini, kirim perintah *@demote* @tagadmin', id)
             if (mentionedJidList.length >= 2) return angga23.reply(from, 'Maaf, perintah ini hanya dapat digunakan kepada 1 orang.', id)
@@ -2665,7 +2654,7 @@ Menunggu video...`
             break
         case `${prefix}join`:
             if (args.length === 1) return angga23.reply(from, 'Hanya Owner yang bisa memasukan Bot ke dalam Grup!', id)
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko', id)
             const link = body.slice(6)
             const tGr = await angga23.getAllGroups()
             const minMem = 1
@@ -2682,7 +2671,7 @@ Menunggu video...`
             break
         case `${prefix}odelete`:
             if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan dalam group', id)
-            if (isOwner && !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin Sasha', id)
+            if (isOwner && !isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin wiko', id)
             if (!quotedMsg) return angga23.reply(from, 'Salah!!, kirim perintah *@delete [tagpesanbot]*', id)
             if (!quotedMsgObj.fromMe) return angga23.reply(from, 'Salah!!, Bot tidak bisa mengahpus chat user lain!', id)
             angga23.deleteMessage(quotedMsgObj.chatId, quotedMsgObj.id, false)
@@ -2695,19 +2684,19 @@ Menunggu video...`
             angga23.deleteMessage(quotedMsgObj.chatId, quotedMsgObj.id, false)
             break
         case `${prefix}getss`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha', id)            
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko', id)            
             const sesPic = await angga23.getSnapshot()
             angga23.sendFile(from, sesPic, 'session.png', 'Nih SAYANG!', id)
             break
-        case `${prefix}sashaadmin`:
-            let admn = `This is list of Sasha Admin\nTotal : ${adminNumber.length}\n`
+        case `${prefix}wikoadmin`:
+            let admn = `This is list of wiko Admin\nTotal : ${adminNumber.length}\n`
             for (let i of adminNumber) {
                 admn += `➸ ${i.replace(/@c.us/g,'')}\n`
             }
             await angga23.reply(from, admn, id)
             break
 		case `${prefix}listvip`:
-			let lv = `Ini adalah list User VIP Sasha\nTotal : ${VipUser.length}\n`
+			let lv = `Ini adalah list User VIP wiko\nTotal : ${VipUser.length}\n`
 			for (let i of VipUser) {
 				lv += `➸ ${i.replace(/@c.us/g,'')}\n`
 			}
@@ -2721,7 +2710,7 @@ Menunggu video...`
 			await angga23.reply(from, lbw, id)
 			break
         case `${prefix}limit`:
-			if (!isAdmin) return angga23.reply(from, 'Jika ingin cek limit bilang ke Admin atau Owner Sasha ya Kak...', id)
+			if (!isAdmin) return angga23.reply(from, 'Jika ingin cek limit bilang ke Admin atau Owner wiko ya Kak...', id)
             var found = false
             const limidat = JSON.parse(fs.readFileSync('./lib/database/limit.json'))
                 for (let lmt of limidat) {
@@ -2743,7 +2732,7 @@ Menunggu video...`
 				}
 		            break
 		case `${prefix}addlimit`:
-			if (!isAdmin) return angga23.reply(from, 'Maaf kak, hanya untuk Admin Sasha.', id)
+			if (!isAdmin) return angga23.reply(from, 'Maaf kak, hanya untuk Admin wiko.', id)
 			var found = false;
                     Object.keys(limit).forEach((i) => {
                         if(limit[i].id == mentionedJidList[0]){
@@ -2792,7 +2781,7 @@ Menunggu video...`
             }
             break
 		case `${prefix}addbadword`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
 			if (!isGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin group', id)
 			if (args.length == 1) return angga23.reply(from, `Kirim perintah ${prefix}addbadword [kata kasar]. contoh ${prefix}addbadword bego`,id)
                 const bw = body.slice(12)
@@ -2801,7 +2790,7 @@ Menunggu video...`
                 angga23.reply(from, 'Success Menambahkan Bad Word!', id)
 				break
 		case `${prefix}delbadword`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
 			if (!isGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin group', id)
 			if (args.length == 1) return angga23.reply(from, `Kirim perintah ${prefix}delbadword [kata kasar]. contoh ${prefix}delbadword bego`,id)
 				let dbw = body.slice(12)
@@ -2810,39 +2799,39 @@ Menunggu video...`
 				angga23.reply(from, 'Success Menghapus BAD WORD!', id)
 			break
 		case `${prefix}addvip`:
-			if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin Sasha', id)
-            //if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+			if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin wiko', id)
+            //if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
 				for (let i = 0; i < mentionedJidList.length; i++) {
 				VipUser.push(mentionedJidList[i])
 				fs.writeFileSync('./lib/database/VipUser.json', JSON.stringify(VipUser))
-				angga23.sendTextWithMentions(from, `Success Menambahkan User VIP Sasha!\n╭──────「 *VIP👑* 」──────\n│+ *UserID* : @${mentionedJidList[0].replace('@c.us', '')}\n│+ *Status* : *ACTIVE*\n│+ *Since* : ${time}\n│+ *Expired* : ${tm}\n│ Thx for Upgrade to VIP🥰\n╰──────「 *SASHA* 」────`, id)
+				angga23.sendTextWithMentions(from, `Success Menambahkan User VIP wiko!\n╭──────「 *VIP👑* 」──────\n│+ *UserID* : @${mentionedJidList[0].replace('@c.us', '')}\n│+ *Status* : *ACTIVE*\n│+ *Since* : ${time}\n│+ *Expired* : ${tm}\n│ Thx for Upgrade to VIP🥰\n╰──────「 *wiko* 」────`, id)
 				}
             break
 		case `${prefix}delvip`:
-			if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin Sasha', id)
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+			if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Admin wiko', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
 				let dv = VipUser.indexOf(mentionedJidList[0])
 				VipUser.splice(dv, 1)
 				fs.writeFileSync('./lib/database/VipUser.json', JSON.stringify(VipUser))
-				angga23.reply(from, 'Success Menghapus User VIP Sasha!', id)
+				angga23.reply(from, 'Success Menghapus User VIP wiko!', id)
 			break
 		case `${prefix}addadmin`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
                 for (let i = 0; i < mentionedJidList.length; i++) {
                 adminNumber.push(mentionedJidList[i])
                 fs.writeFileSync('./lib/database/admin.json', JSON.stringify(adminNumber))
-                angga23.reply(from, 'Success Menambahkan Admin Sasha!', id)
+                angga23.reply(from, 'Success Menambahkan Admin wiko!', id)
 				}
             break
         case `${prefix}deladmin`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
                 let inq = adminNumber.indexOf(mentionedJidList[0])
                 adminNumber.splice(inq, 1)
                 fs.writeFileSync('./lib/database/admin.json', JSON.stringify(adminNumber))
-                angga23.reply(from, 'Success Menghapus Admin Sasha!', id)
+                angga23.reply(from, 'Success Menghapus Admin wiko!', id)
             break
         case `${prefix}block`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
             for (let i = 0; i < mentionedJidList.length; i++) {
                 let unblock = `${mentionedJidList[i]}`
                 await angga23.contactBlock(unblock).then((a)=>{
@@ -2852,7 +2841,7 @@ Menunggu video...`
             }
             break
         case `${prefix}unblock`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner Sasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Owner wiko!', id)
             for (let i = 0; i < mentionedJidList.length; i++) {
                 let unblock = `${mentionedJidList[i]}`
                 await angga23.contactUnblock(unblock).then((a)=>{
@@ -2862,7 +2851,7 @@ Menunggu video...`
             } 
             break
         case `${prefix}ban`:
-            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin Sasha!', id)
+            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin wiko!', id)
                 for (let i = 0; i < mentionedJidList.length; i++) {
                 banned.push(mentionedJidList[i])
                 fs.writeFileSync('./lib/database/banned.json', JSON.stringify(banned))
@@ -2870,7 +2859,7 @@ Menunggu video...`
             }
             break
         case `${prefix}unban`:
-            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin Sasha!', id)
+            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh admin wiko!', id)
                 let inz = banned.indexOf(mentionedJidList[0])
                 banned.splice(inz, 1)
                 fs.writeFileSync('./lib/database/banned.json', JSON.stringify(banned))
@@ -2917,10 +2906,10 @@ Menunggu video...`
             if(!bug) return
             if(isGroupMsg){
                 angga23.sendText(ownerNumber, `*[BUG REPORT]*\n*WAKTU* : ${time}\nNO PENGIRIM : wa.me/${sender.id.match(/\d+/g)}\nGroup : ${formattedTitle}\n\n${bug}`)
-                angga23.reply(from, 'Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditSashapi.' ,id)
+                angga23.reply(from, 'Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditwikopi.' ,id)
             }else{
                 angga23.sendText(ownerNumber, `*[BUG REPORT]*\n*WAKTU* : ${time}\nNO PENGIRIM : wa.me/${sender.id.match(/\d+/g)}\n\n${bug}`)
-                angga23.reply(from, 'Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditSashapi.', id)
+                angga23.reply(from, 'Masalah telah di laporkan ke owner BOT, laporan palsu/main2 tidak akan ditwikopi.', id)
             }
             break
 		case `${prefix}getpp`:
@@ -2936,7 +2925,7 @@ Menunggu video...`
 				break
 		case `${prefix}getprofile`:
 	    case `${prefix}you`:
-			if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh AdminSasha!', id)
+			if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Adminwiko!', id)
 			if (isBanned, isBlocked) return false
 			if (isGroupMsg) {
             if (!quotedMsg) {
@@ -2954,7 +2943,7 @@ Menunggu video...`
             } else {
                 var pfp = pic
             } 
-            await angga23.sendFileFromUrl(from, pfp, 'pfp.jpg', `*PROFILE :* \n☛ *User: ${namae}* \n☛ *Info: ${status}* \n☛ *Block : ${block}* \n☛ *Banned : ${bend}* \n☛ *Admin Group: ${adm}* \n☛ *AdminSasha: ${donate}*`)
+            await angga23.sendFileFromUrl(from, pfp, 'pfp.jpg', `*PROFILE :* \n☛ *User: ${namae}* \n☛ *Info: ${status}* \n☛ *Block : ${block}* \n☛ *Banned : ${bend}* \n☛ *Admin Group: ${adm}* \n☛ *Adminwiko: ${donate}*`)
          } if (quotedMsg) {
          var qmid = quotedMsgObj.sender.id
          var block = blockNumber.includes(qmid)
@@ -2970,7 +2959,7 @@ Menunggu video...`
 			} else {
 			var pfp = pic
 			} 
-			await angga23.sendFileFromUrl(from, pfp, 'pfp.jpg', `*User Profile* ✨ \n\n➸ *Username: ${namae}*\n\n➸ *User Info: ${status}*\n\n*➸ Block : ${block}*\n\n*➸ Banned : ${bend}*\n\n➸ *Admin Group: ${adm}*\n\n➸ *AdminSasha: ${donate}*`)
+			await angga23.sendFileFromUrl(from, pfp, 'pfp.jpg', `*User Profile* ✨ \n\n➸ *Username: ${namae}*\n\n➸ *User Info: ${status}*\n\n*➸ Block : ${block}*\n\n*➸ Banned : ${bend}*\n\n➸ *Admin Group: ${adm}*\n\n➸ *Adminwiko: ${donate}*`)
 			angga23.sendContact(from, serial)
 		 }
         }
@@ -2994,7 +2983,7 @@ Menunggu video...`
                 } else {
                     var pfp = pic
                 } 
-                await angga23.sendFileFromUrl(from, pfp, 'pfp.jpg', `*User Profile* ✨️ \n\n➸ *Username: ${namae}*\n\n➸ *User Info: ${status}*\n\n*➸ Block : ${block}*\n\n*➸ Banned : ${bend}*\n\n➸ *Admin Group: ${adm}*\n\n➸ *Admin Sasha: ${donate}*`)
+                await angga23.sendFileFromUrl(from, pfp, 'pfp.jpg', `*User Profile* ✨️ \n\n➸ *Username: ${namae}*\n\n➸ *User Info: ${status}*\n\n*➸ Block : ${block}*\n\n*➸ Banned : ${bend}*\n\n➸ *Admin Group: ${adm}*\n\n➸ *Admin wiko: ${donate}*`)
              } else if (quotedMsg) {
              var qmid = quotedMsgObj.sender.id
              var block = blockNumber.includes(qmid)
@@ -3010,14 +2999,14 @@ Menunggu video...`
               } else {
               var pfp = pic
               } 
-              await angga23.sendFileFromUrl(from, pfp, 'pfp.jpg', `*User Profile* ✨️ \n\n➸ *Username: ${namae}*\n\n➸ *User Info: ${status}*\n\n*➸ Block : ${block}*\n\n*➸ Banned : ${bend}*\n\n➸ *Admin Group: ${adm}*\n\n➸ *Admin Sasha: ${donate}*`)
+              await angga23.sendFileFromUrl(from, pfp, 'pfp.jpg', `*User Profile* ✨️ \n\n➸ *Username: ${namae}*\n\n➸ *User Info: ${status}*\n\n*➸ Block : ${block}*\n\n*➸ Banned : ${bend}*\n\n➸ *Admin Group: ${adm}*\n\n➸ *Admin wiko: ${donate}*`)
              }
             }
             break
         // LIST MENU
 		case `${prefix}git`:
 			angga23.sendText(from, 'Spesial Thanks To:')
-			angga23.sendContact(chatId, `6281338888294@c.us`)
+			angga23.sendContact(chatId, `6281555745357@c.us`)
 			angga23.sendContact(chatId, `6281311850715@c.us`)
 			angga23.sendContact(chatId, `628992490269@c.us`)
 			angga23.sendLinkWithAutoPreview(from, `GITHUB: https://github.com/Angga23Bot/SashaBOT1.git`)
@@ -3029,8 +3018,8 @@ Menunggu video...`
 		case `${prefix}intro`:
 		    angga23.sendText(from, intro)
             break
-        case `${prefix}sashagroup`:
-            angga23.reply(from, `Link Group Sasha : https://chat.whatsapp.com/EF1Gm9Uyu2oF1fb57HAHLJ Jangan Lupa Join Ya Kak ${pushname}`, id)
+        case `${prefix}wikogroup`:
+            angga23.reply(from, `Link Group wiko :https://chat.whatsapp.com/FeMx72gYWY2FHOQjEZodzx ${pushname}`, id)
             break
 		case `${prefix}vipmenu`:
 			angga23.sendText(from, VIPcmd)
@@ -3057,11 +3046,11 @@ Menunggu video...`
             angga23.sendText(from, sewa)
             break
         case `${prefix}adminmenu`:
-            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin Sasha', id)
+            if (!isAdmin) return angga23.reply(from, 'Perintah ini hanya untuk Admin wiko', id)
             angga23.sendText(from, admincmd)
             break
         case `${prefix}ownermenu`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner Sasha', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya untuk Owner wiko', id)
             angga23.sendText(from, ownercmd)
             break
         case `${prefix}praymenu`:
@@ -3184,13 +3173,13 @@ Menunggu video...`
 			break
 		case `${prefix}tutupgc`:
 		case `${prefix}close`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh AdminSasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Adminwiko!', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
             angga23.setGroupToAdminsOnly(groupId, true)
             break
 		case `${prefix}bukagc`:
 		case `${prefix}open`:
-            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh AdminSasha!', id)
+            if (!isOwner) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan oleh Adminwiko!', id)
             if (!isBotGroupAdmins) return angga23.reply(from, 'Perintah ini hanya bisa di gunakan ketika bot menjadi admin', id)
             angga23.setGroupToAdminsOnly(groupId, false)
             break
@@ -3266,7 +3255,7 @@ Menunggu video...`
 		case `${prefix}setdesk`:
 			if(isGroupMsg) {
 				var wkk = `${from.split('-')[0]}@c.us`
-				if(message.author == wkk || message.author == '6281338888294@c.us') {
+				if(message.author == wkk || message.author == '6281555745357@c.us') {
 					try {
 						const desk = body.slice(9)
 						await angga23.setGroupDescription(from, `${desk}`)
@@ -3289,7 +3278,7 @@ Menunggu video...`
    			break
 		case `${prefix}blackpink`:
             if (!isGroupMsg) return angga23.sendText(from, 'Maaf kak, hanya untuk didalam grup', id)
-            if (args.length === 1) return angga23.reply(from, `kirim perintah ${prefix}blackpink [text]. Contoh: *${prefix}blackpink Sasha*`, id)
+            if (args.length === 1) return angga23.reply(from, `kirim perintah ${prefix}blackpink [text]. Contoh: *${prefix}blackpink wiko*`, id)
 			if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis.`, id)
 			const black = body.slice(11)
             const pink = `https://api.vhtear.com/blackpinkicon?text=${black}&apikey=${vhtearkey}`
@@ -3300,7 +3289,7 @@ Menunggu video...`
 			break
 		case `${prefix}graffity`:
 			if (!isGroupMsg) return angga23.reply(from, `Maaf Kak, Ini fitur Grup!.`, id)
-			if (!isVipUser) return angga23.reply(from, `Maaf ${pushname}, hanya untuk VIP User Sasha`, id)
+			if (!isVipUser) return angga23.reply(from, `Maaf ${pushname}, hanya untuk VIP User wiko`, id)
 			if (args.length === 1) return angga23.reply(from, `Ketik perintah ${prefix}graffity [text]. Contoh: ${prefix}graffity kamu `, id)
 			const graffity = body.slice(9)
 			const graffityz = await get.get('http://inyourdream.herokuapp.com/graffity?kata=' + graffity).json()
@@ -3308,8 +3297,8 @@ Menunggu video...`
 			break
 		case `${prefix}thunder`:
 			if (!isGroupMsg) return angga23.reply(from, 'Perintah ini hanya dapat digunakan didalam Group', id)
-			if (!isVipUser) return angga23.reply(from, 'Perintah ini hanya untuk User VIP👑 Sasha', id)
-            if (args.length === 1)return angga23.reply(from, `Kirim perintah ${prefix}thunder [text].\nContoh: ${prefix}thunder Sasha`, id)
+			if (!isVipUser) return angga23.reply(from, 'Perintah ini hanya untuk User VIP👑 wiko', id)
+            if (args.length === 1)return angga23.reply(from, `Kirim perintah ${prefix}thunder [text].\nContoh: ${prefix}thunder wiko`, id)
 			if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis.`, id)
 			const th = body.slice(9)
 			const tu = `https://api.vhtear.com/thundertext?text=${th}&apikey=${vhtearkey}`
@@ -3329,11 +3318,11 @@ Menunggu video...`
                 angga23.sendTextWithMentions(from, `Ciee, Ngeread doang... Jawab boss!! Ini grup WA Boss!! bukan KORAN!!!.\n${list}`, id)
             } catch(err) {
                 console.log(err)
-                angga23.reply(from,'Maaf, Belum ada yang membaca pesan Sasha', id)
+                angga23.reply(from,'Maaf, Belum ada yang membaca pesan wiko', id)
             }
             break
         case `${prefix}xxx`:
-            if (!isVipUser) return angga23.reply(from, `Perintah ini hanya bisa di gunakan oleh Admin, Owner, dan User VIP Sasha!`, id)
+            if (!isVipUser) return angga23.reply(from, `Perintah ini hanya bisa di gunakan oleh Admin, Owner, dan User VIP wiko!`, id)
             if (!isNsfw) return angga23.reply(from, `command/Perintah NSFW belum di aktifkan di group ini!`, id)
             if (!isGroupMsg) return angga23.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik #limit Untuk Mengecek Kuota Limit Kamu`, id)
@@ -3363,8 +3352,8 @@ Menunggu video...`
             }
             break
         case `${prefix}getxxx`:
-            //if (!isAdmin) return angga23.reply(from, `Perintah ini hanya bisa di gunakan oleh Admin Sasha!`, id)
-            if (!isVipUser) return angga23.reply(from, `Perintah ini hanya untuk Owner, Admin, dan User VIP Sasha!.`, id)
+            //if (!isAdmin) return angga23.reply(from, `Perintah ini hanya bisa di gunakan oleh Admin wiko!`, id)
+            if (!isVipUser) return angga23.reply(from, `Perintah ini hanya untuk Owner, Admin, dan User VIP wiko!.`, id)
 			if (!isNsfw) return angga23.reply(from, `command/Perintah NSFW belum di aktifkan di group ini!`, id)
             if (!isGroupMsg) return angga23.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik #limit Untuk Mengecek Kuota Limit Kamu`, id)
@@ -3429,7 +3418,7 @@ Menunggu video...`
             }
             break
         case `${prefix}xvideos`:
-            if (!isVipUser) return angga23.reply(from, `Perintah ini hanya bisa di gunakan oleh Owner, Admin, dan User VIP Sasha!`, id)
+            if (!isVipUser) return angga23.reply(from, `Perintah ini hanya bisa di gunakan oleh Owner, Admin, dan User VIP wiko!`, id)
             if (!isNsfw) return angga23.reply(from, `command/Perintah NSFW belum di aktifkan di group ini!`, id)
             if (!isGroupMsg) return angga23.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik #limit Untuk Mengecek Kuota Limit Kamu`, id)
@@ -3459,7 +3448,7 @@ Menunggu video...`
             }
             break
         case `${prefix}getxvideos`:
-            if (!isAdmin) return angga23.reply(from, `Perintah ini hanya bisa di gunakan oleh Admin Sasha!`, id)
+            if (!isAdmin) return angga23.reply(from, `Perintah ini hanya bisa di gunakan oleh Admin wiko!`, id)
             if (!isNsfw) return angga23.reply(from, `command/Perintah NSFW belum di aktifkan di group ini!`, id)
             if (!isGroupMsg) return angga23.reply(from, `Perintah ini hanya bisa di gunakan dalam group!`, id)
             if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik #limit Untuk Mengecek Kuota Limit Kamu`, id)
@@ -3515,7 +3504,7 @@ Menunggu video...`
             break
 		case `${prefix}motor`:
 				if (!isGroupMsg) return angga23.sendText(from, Maaf, 'Hanya dalam Grup!', id)
-				if (!isVipUser) return angga23.reply(from, 'Maaf, Hanya untuk VIP User Sasha!', id)
+				if (!isVipUser) return angga23.reply(from, 'Maaf, Hanya untuk VIP User wiko!', id)
                 if (isLimit(serial)) return angga23.reply(from, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
                 //if (isReg(obj)) return
                 //if (cekumur(cekage)) return
@@ -3535,7 +3524,7 @@ Menunggu video...`
                 break
         case `${prefix}hp`:
 				if (!isGroupMsg) return angga23.sendText(from, Maaf, 'Hanya dalam Grup!', id)
-				if (!isVipUser) return angga23.reply(from, 'Maaf, Hanya untuk VIP User Sasha!', id)
+				if (!isVipUser) return angga23.reply(from, 'Maaf, Hanya untuk VIP User wiko!', id)
                 //if (isReg(obj)) return
                 //if (cekumur(cekage)) return
                 if (isLimit(serial)) return angga23.reply(dari, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
@@ -3571,7 +3560,7 @@ Menunggu video...`
 			break
         /*case `${prefix}mobil`:
 				if (!isGroupMsg) return angga23.sendText(from, Maaf, 'Hanya dalam Grup!', id)
-				if (!isVipUser) return angga23.reply(from, 'Maaf, Hanya untuk VIP User Sasha!', id)
+				if (!isVipUser) return angga23.reply(from, 'Maaf, Hanya untuk VIP User wiko!', id)
                 if (isLimit(serial)) return angga23.reply(dari, `Maaf ${pushname}, Kuota Limit Kamu Sudah Habis, Ketik ${prefix}limit Untuk Mengecek Kuota Limit Kamu`, id)
                 //if (isReg(obj)) return
                 //if (cekumur(cekage)) return
@@ -3632,7 +3621,7 @@ Menunggu video...`
 			}
 			break
 		case `${prefix}snobg`:
-			if (!isVipUser) return angga23.reply(from, `Maaf ${pushname}, Hanya untuk VIP User Sasha!.`, id)
+			if (!isVipUser) return angga23.reply(from, `Maaf ${pushname}, Hanya untuk VIP User wiko!.`, id)
 	    if (isMedia && type == 'image' && !quotedMsg && !quotedMsg == 'images') {
                 try {
                     const mediaData = await decryptMedia(message, uaOverride)
@@ -3676,7 +3665,7 @@ Menunggu video...`
 			}
             break*/
 		case `${prefix}snobg`:
-			if (!isVipUser) return angga23.reply(from, `Maaf ${pushname}, Hanya untuk VIP User Sasha!.`, id)
+			if (!isVipUser) return angga23.reply(from, `Maaf ${pushname}, Hanya untuk VIP User wiko!.`, id)
                 try {
                     var mediaData = await decryptMedia(message, uaOverride)
                     var imageBase64 = `data:${mimetype};base64,${mediaData.toString('base64')}`
@@ -3706,7 +3695,7 @@ Menunggu video...`
 			
 			
 		default:
-            if (!isGroupMsg) return angga23.reply(from, `Jika Ingin Menggunakan Bot Harap Masuk Ke Dalam Grup Sasha, Link Ada Di Bio atau Bisa Mengetik ${prefix}sashagroup!\nJika Ingin Sewa Bot atau Bikin Bot Harap Ketik *${prefix}iklan*`, id)
+            if (!isGroupMsg) return angga23.reply(from, `Jika Ingin Menggunakan Bot Harap Masuk Ke Dalam Grup wiko, Link Ada Di Bio atau Bisa Mengetik ${prefix}wikogroup!\nJika Ingin Sewa Bot atau Bikin Bot Harap Ketik *${prefix}iklan*`, id)
             if (command.startsWith(`${prefix}`)) {
                 angga23.reply(from, `Maaf ${pushname}, Command *${args[0]}* Tidak Terdaftar Di Dalam *${prefix}menu*!`, id)
             }
