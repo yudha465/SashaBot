@@ -1,7 +1,7 @@
 {
   "name": "WikkBOT",
   "version": "10.0.0",
-  "description": "THX FOR MHANKBARBAR,TOBZ AS MY FRIEND, REEDIT BY YUDZ",
+  "description": "THX FOR MHANKBARBAR,YUDZ,TOBZ AS MY FRIEND",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
