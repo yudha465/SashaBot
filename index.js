@@ -42,10 +42,10 @@ function restartAwal(angga23){
 
 const start = async (angga23 = new Client()) => {
         console.log('------------------------------------------------')
-        console.log(color(figlet.textSync('Sasha BOT', { horizontalLayout: 'full' })))
+        console.log(color(figlet.textSync('Wiko BOT', { horizontalLayout: 'full' })))
         console.log('------------------------------------------------')
-        console.log('[DEV] ANGGA.VOLDIGOAD')
-        console.log('[SERVER] Sasha IS ONLINE!')
+        console.log('[DEV] YUDZ')
+        console.log('[SERVER] Wiko IS ONLINE!')
         //angga23.onAnyMessage((fn) => messageLog(fn.fromMe, fn.type))
         // Force it to keep the current session
         angga23.onStateChanged((state) => {
@@ -74,12 +74,12 @@ const start = async (angga23 = new Client()) => {
             }))
         
         angga23.onAddedToGroup(async (chat) => {
-            if(isWhite(chat.id)) return angga23.sendText(chat.id, `Halo aku Sasha, Ketik ${prefix}help Untuk Melihat List Command Ku...`)
+            if(isWhite(chat.id)) return angga23.sendText(chat.id, `Halo aku Wiko, Ketik ${prefix}help Untuk Melihat List Command Ku...`)
             if(mtcState === false){
                 const groups = await angga23.getAllGroups()
                 // BOT group count less than
                 if(groups.length > groupLimit){
-                    await angga23.sendText(chat.id, 'Maaf, Batas group yang dapat Sasha tampung sudah penuh').then(async () =>{
+                    await angga23.sendText(chat.id, 'Maaf, Batas group yang dapat Wiko tampung sudah penuh').then(async () =>{
                         angga23.deleteChat(chat.id)
                         angga23.leaveGroup(chat.id)
                     })
@@ -90,11 +90,11 @@ const start = async (angga23 = new Client()) => {
                             angga23.leaveGroup(chat.id)
                         })
                     }else{
-                        if(!chat.isReadOnly) angga23.sendText(chat.id, `Halo aku Sasha, Ketik ${prefix}help Untuk Melihat List Command Ku...`)
+                        if(!chat.isReadOnly) angga23.sendText(chat.id, `Halo aku Wiko, Ketik ${prefix}help Untuk Melihat List Command Ku...`)
                     }
                 }
             }else{
-                await angga23.sendText(chat.id, 'Sasha sedang maintenance, coba lain hari').then(async () => {
+                await angga23.sendText(chat.id, 'Wiko sedang maintenance, coba lain hari').then(async () => {
                     angga23.deleteChat(chat.id)
                     angga23.leaveGroup(chat.id)
                 })
