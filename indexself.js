@@ -42,8 +42,8 @@ const start = async (angga23 = new Client()) => {
         console.log('------------------------------------------------')
         console.log(color(figlet.textSync('ANGGA23', { horizontalLayout: 'full' })))
         console.log('------------------------------------------------')
-        console.log(color('[DEV]'), color('ANGGA VOLDIGOAD', 'yellow'))
-        console.log(color('[~>>]'), color('[ANGGASELFBOT] Server Started!', 'green'))
+        console.log(color('[DEV]'), color('ACHMAD YUDHA', 'yellow'))
+        console.log(color('[~>>]'), color('[YUDZSELFBOT] Server Started!', 'green'))
         //angga23.onAnyMessage((fn) => messageLog(fn.fromMe, fn.type))
         // Force it to keep the current session
         angga23.onStateChanged((state) => {
@@ -76,7 +76,7 @@ const start = async (angga23 = new Client()) => {
                 const groups = await angga23.getAllGroups()
                 // BOT group count less than
                 if(groups.length > groupLimit){
-                    await angga23.sendText(chat.id, 'Maaf, Batas group untuk *NOIRSELFBOT* sudah penuh').then(async () =>{
+                    await angga23.sendText(chat.id, 'Maaf, Batas group untuk *WIKOSELFBOT* sudah penuh').then(async () =>{
                         angga23.deleteChat(chat.id)
                         angga23.leaveGroup(chat.id)
                     })
